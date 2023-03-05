@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\RestoController;
+use App\Http\Controllers\ArticleController;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::delete('/transaction/{id}',[TransactionController::class,'destroy']);
 
 Route::resource('/transaction',TransactionController::class)->except(['create', 'edit']);
+Route::resource('/resto',RestoController::class)->except(['create', 'edit']);
+
+
+
+// Route::get('/article', [UserController::class, 'index']);
+// Route::get('/article/{id}', [UserController::class, 'show']);
+// Route::post('/article', [UserController::class, 'store']);
+// Route::put('/article/{id}', [UserController::class, 'update']);
+// Route::delete('/article/{id}', [UserController::class, 'destroy']);
+Route::resource('/article',ArticleController::class);
